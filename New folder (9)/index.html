@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>somewhere nobody goes</title>
+    <meta name="description" content="A personal archive of music, memories, and things left unsaid.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Share+Tech+Mono&family=Special+Elite&display=swap" rel="stylesheet">
+
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <div class="noise"></div>
+    <div class="scanlines"></div>
+
+    <header class="topbar">
+        <a class="site-name" href="#">nobody.online<span>_</span></a>
+
+        <nav>
+            <a href="#about">about</a>
+            <a href="#music">archive</a>
+            <a href="#gallery">fragments</a>
+            <a href="#diary">diary</a>
+        </nav>
+
+        <div class="system-status">
+            <span class="status-dot"></span> system online
+        </div>
+    </header>
+
+    <main class="layout">
+        <aside class="sidebar">
+            <div class="side-window">
+                <div class="window-bar">
+                    <span>user_profile.exe</span>
+                    <span>_ □ ×</span>
+                </div>
+
+                <div class="profile-image">
+                    <img class="editable-image"
+                         src="data:image/png;base64,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"
+                         alt="Profile image">
+                </div>
+
+                <div class="profile-info">
+                    <p class="muted">USER ID: ?????</p>
+                    <h2 contenteditable="true" data-editable>unknown user.. maybe</h2>
+                    <p contenteditable="true" data-editable>somewhere on the internet</p>
+                    <div class="divider"></div>
+                    <p>status: <span class="red-text">worse than anything</span></p>
+                    <p>mood: <span contenteditable="true" data-editable>sad angry whatever u want</span></p>
+                    <p>last seen: <span id="clock">today</span></p>
+                </div>
+            </div>
+
+            <div class="side-window">
+                <div class="window-bar">
+                    <span>navigation.txt</span>
+                    <span>01</span>
+                </div>
+
+                <div class="side-links">
+                    <a href="#about">/ who am i</a>
+                    <a href="#music">/ what i listen to</a>
+                    <a href="#gallery">/ things i saved</a>
+                    <a href="#diary">/ unsent thoughts</a>
+                </div>
+            </div>
+
+            <div class="side-window quote-window">
+                <div class="window-bar">
+                    <span>thought_001.txt</span>
+                </div>
+                <p contenteditable="true" data-editable>
+                    "some things are easier to leave unsaid"
+                </p>
+            </div>
+
+            <button id="editButton" class="terminal-button">[ EDIT WEBSITE ]</button>
+            <p class="muted tiny">LOCAL ARCHIVE // VERSION 0.01</p>
+        </aside>
+
+        <div class="main-content">
+            <section class="hero" id="home">
+                <p class="eyebrow">PERSONAL ARCHIVE // DO NOT EXPECT MUCH</p>
+
+                <h1 contenteditable="true" data-editable>
+                    nothing<br>
+                    <span>really matters</span>
+                </h1>
+
+                <div class="hero-bottom">
+                    <p contenteditable="true" data-editable>
+                        just a place to leave pieces of myself
+                        that i don't know what to do with
+                    </p>
+
+                    <div class="hero-symbol">[ 404 ]</div>
+                </div>
+
+                <div class="hero-line"></div>
+
+                <div class="hero-meta">
+                    <span>NO PARTICULAR PLACE</span>
+                    <span>NO PARTICULAR TIME</span>
+                    <span>STILL HERE, SOMEHOW</span>
+                </div>
+            </section>
+
+            <section id="about" class="content-section">
+                <div class="section-title">
+                    <span>01 //</span>
+                    <h2>ABOUT THIS PERSON</h2>
+                </div>
+
+                <div class="text-window">
+                    <div class="window-bar">
+                        <span>readme.txt</span>
+                        <span>UTF-8</span>
+                    </div>
+
+                    <div class="window-body">
+                        <p class="red-text">> opening file...</p>
+
+                        <p contenteditable="true" data-editable>
+                            i don't really know what i'm doing here.
+                            this website is a collection of music, pictures,
+                            thoughts, and random things that mean something
+                            to me for reasons i probably couldn't explain
+                        </p>
+
+                        <p contenteditable="true" data-editable>
+                            i like playing games, late nights, and music
+                            that makes everything feel like an old memory
+                        </p>
+
+                        <p contenteditable="true" data-editable>
+                            if you found this page... i guess you were
+                            supposed to find it.
+                        </p>
+
+                        <div class="divider"></div>
+
+                        <p class="muted">end of myself. nothing else to report.</p>
+                    </div>
+                </div>
+
+                <div class="facts-grid">
+                    <div class="fact">
+                        <span class="muted">current obsession:</span>
+                        <p contenteditable="true" data-editable>my bird, games</p>
+                    </div>
+                    <div class="fact">
+                        <span class="muted">favorite time</span>
+                        <p contenteditable="true" data-editable>after 11:30 pm</p>
+                    </div>
+                    <div class="fact">
+                        <span class="muted">current thought</span>
+                        <p contenteditable="true" data-editable>???</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="music" class="content-section">
+                <div class="section-title">
+                    <span>02 //</span>
+                    <h2>THE SOUND ARCHIVE</h2>
+                </div>
+
+                <p class="section-description" contenteditable="true" data-editable>
+                    songs for the hours nobody remembers
+                </p>
+
+                <div class="music-player">
+                    <div class="now-cover">
+                        <img id="nowCover"
+                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDBdCtydBpvOpGIs04nZ05iKLdH7VI731sDgjv59D66A&s=10"
+                             alt="20200229 2">
+                    </div>
+
+                    <div class="now-info">
+                        <p class="muted">NOW PLAYING // <span id="trackNumber">--</span></p>
+                        <h3 id="nowTitle">20200229 2</h3>
+                        <p id="nowArtist">omgmacdemarco</p>
+
+                        <div class="player-controls">
+                            <button id="prevButton" aria-label="Previous track">|◀</button>
+                            <button id="playButton" aria-label="Play or pause">▶</button>
+                            <button id="nextButton" aria-label="Next track">▶|</button>
+                        </div>
+
+                        <div class="progress-wrap">
+                            <span id="currentTime">00:00</span>
+                            <input id="progress" type="range" min="0" max="100" value="0" aria-label="Track progress">
+                            <span id="duration">00:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="archive-heading">
+                    <span>Songs i listen to</span>
+                    <span id="songCount">08 files</span>
+                </div>
+
+                <div id="songGrid" class="song-grid"></div>
+
+                <div class="archive-controls">
+                    <button id="addSongButton" class="terminal-button">[ + Add a track of your own]</button>
+                    <p class="muted tiny">right click a track in edit mode to edit it or not its broken idfk.</p>
+                </div>
+
+                <audio id="audioPlayer" preload="metadata"></audio>
+            </section>
+
+            <section id="gallery" class="content-section">
+                <div class="section-title">
+                    <span>03 //</span>
+                    <h2>FRAGMENTS</h2>
+                </div>
+
+                <p class="section-description" contenteditable="true" data-editable>
+                    images without context memories without dates...
+                </p>
+
+                <div id="galleryGrid" class="gallery-grid">
+                    <article class="fragment">
+                        <img class="editable-image"
+                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZaRbgWucgltfF0ssKelnC3Z4L6x3FyIGO4tbCd8CM2Q&s=10"
+                             alt="Fragment one">
+                        <div class="fragment-caption">
+                            <span>IMG_001</span>
+                            <p contenteditable="true" data-editable>this is the first game i played in roblox on september 22 2015</p>
+                        </div>
+                    </article>
+
+                    <article class="fragment">
+                        <img class="editable-image"
+                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzO92XeV3heNzLLCRteo91VLCxBPew_uQq37WlMJ04yw&s=10"
+                             alt="Fragment two">
+                        <div class="fragment-caption">
+                            <span>IMG_002</span>
+                            <p contenteditable="true" data-editable>if you show me this photo in 50 years i wont remember anything but something in my head will ficker.</p>
+                        </div>
+                    </article>
+
+                    <article class="fragment">
+                        <img class="editable-image"
+                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPUyTVBXy9IrsTl95vkP2bs35RdEdhIlz6BOnih9gF1A&s=10"
+                             alt="Fragment three">
+                        <div class="fragment-caption">
+                            <span>IMG_003</span>
+                            <p contenteditable="true" data-editable>the light is broken inside but i still work.</p>
+                        </div>
+                    </article>
+
+                    <article class="fragment">
+                        <img class="editable-image"
+                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmEY5gCbVyzEK3GeETnHw91FHOS655-rIYqv8Q91Z3Mw&s=10"
+                             alt="Fragment four">
+                        <div class="fragment-caption">
+                            <span>IMG_004</span>
+                            <p contenteditable="true" data-editable>hurts my heart till this day oh god how much i miss this playing as a kid...</p>
+                        </div>
+                    </article>
+                </div>
+
+                <button id="addImageButton" class="terminal-button">
+                    [ + add image.]
+                </button>
+            </section>
+
+            <section id="diary" class="content-section">
+                <div class="section-title">
+                    <span>04 //</span>
+                    <h2>UNSENT THOUGHTS</h2>
+                </div>
+
+                <div class="diary-entry">
+                    <div class="entry-meta">
+                        <span>ENTRY_001</span>
+                        <span contenteditable="true" data-editable>DATE UNKNOWN</span>
+                    </div>
+
+                    <p contenteditable="true" data-editable>
+                        sometimes i open this page just to have something
+                        to look at. maybe that's enough for today..
+                    </p>
+
+                    <span class="muted">END TRANSMISSION.</span>
+                </div>
+
+                <div class="diary-entry">
+                    <div class="entry-meta">
+                        <span>ENTRY_002</span>
+                        <span contenteditable="true" data-editable>NO TIMESTAMP</span>
+                    </div>
+
+                    <p contenteditable="true" data-editable>
+                        if i forget the details, maybe i'll still remember
+                        how it felt..
+                    </p>
+
+                    <span class="muted">END TRANSMISSION.</span>
+                </div>
+
+                <button id="addEntryButton" class="terminal-button">
+                    [ + NEW ENTRY!!! ]
+                </button>
+            </section>
+
+            <section class="guestbook content-section">
+                <div class="section-title">
+                    <span>05 //</span>
+                    <h2>LEAVE A SIGNAL</h2>
+                </div>
+
+                <p class="section-description">
+                    a message in the ??? saved only in this browser.
+                </p>
+
+                <form id="messageForm">
+                    <input id="messageInput" type="text"
+                           maxlength="180"
+                           placeholder="type a message..."
+                           required>
+                    <button type="submit" class="terminal-button">[ SEND ]</button>
+                </form>
+
+                <div id="messageList" class="message-list"></div>
+            </section>
+
+            <footer>
+                <div class="footer-line"></div>
+                <p>Y o u  H a v e  R e a c h e d  T h e  E n d  O f  T h i s  P l a c e  l o l.</p>
+                <p class="muted">© Personal archive. // My life is the worst</p>
+                <a href="#home">Return to the top.. or maybe not. ↑</a>
+            </footer>
+        </div>
+    </main>
+
+    <div id="editNotice" class="edit-notice"></div>
+</body>
+</html>
